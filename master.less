@@ -1,0 +1,308 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~NEUMORPHIC~VARIABLES~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@primary-color: hsl(0, 0%, 97%); //The main color of your site pages
+@shadow-intensity: 16%; //Embossed Shadow
+@inset-intensity: 4%; //Debossed Shadow */
+@distance: 8px; //Shadow distance (relative to medium button size)
+@blur-multiplier: 2; //Shadow blur
+@hover-multiplier: 1.75; //Shadow growth on mouseover
+@radius: 10px; //Corner radius when button shape is 'Rounded'
+@animation-timings: all 0.3s ease-in-out; //Transition time between element states (eg hover, active, etc)
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~NEUMORPHIC~MATH~~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@primary-shadow-light: lighten(@primary-color, @shadow-intensity);
+@primary-shadow-dark: darken(@primary-color, @shadow-intensity);
+@primary-inset-light: lighten(@primary-color, @inset-intensity);
+@primary-inset-dark: darken(@primary-color, @inset-intensity);
+@smallest: calc(@distance / 3 * 1);
+@smallest-negative: calc(@distance / 3 * 1 * -1);
+@smallest-blur: calc(@distance / 3 * 1 * @blur-multiplier);
+@smallest-hover: calc(@distance * @hover-multiplier / 3 * 1);
+@smallest-hover-negative: calc(@distance * @hover-multiplier / 3 * 1 * -1);
+@smallest-hover-blur: calc(@distance * @hover-multiplier / 3 * 1 * @blur-multiplier);
+@small: calc(@distance / 3 * 2);
+@small-negative: calc(@distance / 3 * 2 * -1);
+@small-blur: calc(@distance / 3 * 2 * @blur-multiplier);
+@small-hover: calc(@distance * @hover-multiplier / 3 * 2);
+@small-hover-negative: calc(@distance * @hover-multiplier / 3 * 2 * -1);
+@small-hover-blur: calc(@distance * @hover-multiplier / 3 * 2 * @blur-multiplier);
+@medium: @distance;
+@medium-negative: calc(@distance * -1);
+@medium-blur: calc(@distance * @blur-multiplier);
+@medium-hover: calc(@distance * @hover-multiplier);
+@medium-hover-negative: calc(@distance * @hover-multiplier * -1);
+@medium-hover-blur: calc(@distance * @hover-multiplier * @blur-multiplier);
+@large: calc(@distance / 3 * 4);
+@large-negative: calc(@distance / 3 * 4 * -1);
+@large-blur: calc(@distance / 3 * 4 * @blur-multiplier);
+@large-hover: calc(@distance * @hover-multiplier / 3 * 4);
+@large-hover-negative: calc(@distance * @hover-multiplier / 3 * 4 * -1);
+@large-hover-blur: calc(@distance * @hover-multiplier / 3 * 4 * @blur-multiplier);
+@largest: calc(@distance / 3 * 5);
+@largest-negative: calc(@distance / 3 * 5 * -1);
+@largest-blur: calc(@distance / 3 * 5 * @blur-multiplier);
+@largest-hover: calc(@distance * @hover-multiplier / 3 * 5);
+@largest-hover-negative: calc(@distance * @hover-multiplier / 3 * 5 * -1);
+@largest-hover-blur: calc(@distance * @hover-multiplier / 3 * 5 * @blur-multiplier);
+
+@smallest-shadow: @smallest @smallest @smallest-blur @primary-shadow-dark, @smallest-negative @smallest-negative @smallest-blur @primary-shadow-light !important;
+@small-shadow: @small @small @small-blur @primary-shadow-dark, @small-negative @small-negative @small-blur @primary-shadow-light !important;
+@medium-shadow: @medium @medium @medium-blur @primary-shadow-dark, @medium-negative @medium-negative @medium-blur @primary-shadow-light !important;
+@large-shadow: @large @large @large-blur @primary-shadow-dark, @large-negative @large-negative @large-blur @primary-shadow-light !important;
+@largest-shadow: @largest @largest @largest-blur @primary-shadow-dark, @largest-negative @largest-negative @largest-blur @primary-shadow-light !important;
+@smallest-mouseover: @smallest-hover @smallest-hover @smallest-hover-blur @primary-shadow-dark, @smallest-hover-negative @smallest-hover-negative @smallest-hover-blur @primary-shadow-light !important;
+@small-mouseover: @small-hover @small-hover @small-hover-blur @primary-shadow-dark, @small-hover-negative @small-hover-negative @small-hover-blur @primary-shadow-light !important;
+@medium-mouseover: @medium-hover @medium-hover @medium-hover-blur @primary-shadow-dark, @medium-hover-negative @medium-hover-negative @medium-hover-blur @primary-shadow-light !important;
+@large-mouseover: @large-hover @large-hover @large-hover-blur @primary-shadow-dark, @large-hover-negative @large-hover-negative @large-hover-blur @primary-shadow-light !important;
+@largest-mouseover: @largest-hover @largest-hover @largest-hover-blur @primary-shadow-dark, @largest-hover-negative @largest-hover-negative @largest-hover-blur @primary-shadow-light !important;
+@smallest-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @smallest @smallest @smallest-blur @primary-inset-dark, inset @smallest-negative @smallest-negative @smallest-blur @primary-inset-light !important;
+@small-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @small @small @small-blur @primary-inset-dark, inset @small-negative @small-negative @small-blur @primary-inset-light !important;
+@medium-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @medium @medium @medium-blur @primary-inset-dark, inset @medium-negative @medium-negative @medium-blur @primary-inset-light !important;
+@large-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @large @large @large-blur @primary-inset-dark, inset @large-negative @large-negative @large-blur @primary-inset-light !important;
+@largest-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @largest @largest @largest-blur @primary-inset-dark, inset @largest-negative @largest-negative @largest-blur @primary-inset-light !important;
+@smallest-inset: inset @smallest @smallest @smallest-blur @primary-inset-dark, inset @smallest-negative @smallest-negative @smallest-blur @primary-inset-light !important;
+@small-inset: inset @small @small @small-blur @primary-inset-dark, inset @small-negative @small-negative @small-blur @primary-inset-light !important;
+@medium-inset: inset @medium @medium @medium-blur @primary-inset-dark, inset @medium-negative @medium-negative @medium-blur @primary-inset-light !important;
+@large-inset: inset @large @large @large-blur @primary-inset-dark, inset @large-negative @large-negative @large-blur @primary-inset-light !important;
+@largest-inset: inset @largest @largest @largest-blur @primary-inset-dark, inset @largest-negative @largest-negative @largest-blur @primary-inset-light !important;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~NEUMORPHIC~BUTTONS~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.button, .sqs-block-button .sqs-block-button-element, .sqs-add-to-cart-button {
+  background:@primary-color !important;
+  border: none !important;
+  transition: @animation-timings !important;
+  -o-transition: @animation-timings !important;
+  -moz-transition: @animation-timings !important;
+  -webkit-transition: @animation-timings !important;
+  &:hover{
+    opacity: 1 !important;
+  }
+}
+.small-button-shape-rounded .sqs-block-button .sqs-block-button-element--small, .medium-button-shape-rounded .sqs-block-button .sqs-block-button-element--medium, .large-button-shape-rounded .sqs-block-button .sqs-block-button-element--large, .tweak-product-item-details-add-to-cart-button-shape-rounded .sqs-add-to-cart-button {
+  border-radius: @radius !important;
+}
+.sqs-block-button .sqs-block-button-element--small, .tweak-product-item-details-add-to-cart-button-padding-small .sqs-add-to-cart-button {
+box-shadow: @small-shadow;
+-o-box-shadow: @small-shadow;
+-moz-box-shadow: @small-shadow;
+-webkit-box-shadow: @small-shadow;
+  &:hover {
+    box-shadow: @small-mouseover;
+    -o-box-shadow: @small-mouseover;
+    -moz-box-shadow: @small-mouseover;
+    -webkit-box-shadow: @small-mouseover;
+  }
+  &:active {
+    box-shadow: @small-active;
+    -o-box-shadow: @small-active;
+    -moz-box-shadow: @small-active;
+    -webkit-box-shadow: @small-active;
+  }
+}
+.sqs-block-button .sqs-block-button-element--medium, .tweak-product-item-details-add-to-cart-button-padding-medium .sqs-add-to-cart-button {
+box-shadow: @medium-shadow;
+-o-box-shadow: @medium-shadow;
+-moz-box-shadow: @medium-shadow;
+-webkit-box-shadow: @medium-shadow;
+  &:hover {
+    box-shadow: @medium-mouseover;
+    -o-box-shadow: @medium-mouseover;
+    -moz-box-shadow: @medium-mouseover;
+    -webkit-box-shadow: @medium-mouseover;
+  }
+  &:active {
+    box-shadow: @medium-active;
+    -o-box-shadow: @medium-active;
+    -moz-box-shadow: @medium-active;
+    -webkit-box-shadow: @medium-active;
+  }
+}
+.sqs-block-button .sqs-block-button-element--large, .tweak-product-item-details-add-to-cart-button-padding-large .sqs-add-to-cart-button {
+box-shadow: @large-shadow;
+-o-box-shadow: @large-shadow;
+-moz-box-shadow: @large-shadow;
+-webkit-box-shadow: @large-shadow;
+  &:hover {
+    box-shadow: @large-mouseover;
+    -o-box-shadow: @large-mouseover;
+    -moz-box-shadow: @large-mouseover;
+    -webkit-box-shadow: @large-mouseover;
+  }
+  &:active {
+    box-shadow: @large-active;
+    -o-box-shadow: @large-active;
+    -moz-box-shadow: @large-active;
+    -webkit-box-shadow: @large-active;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~NEUMORPHIC~CONTACT~FORM~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.field-element {
+  box-shadow: @small-inset;
+  -o-box-shadow: @small-inset;
+  -moz-box-shadow: @small-inset;
+  -webkit-box-shadow: @small-inset;
+  border-radius: @radius !important;
+  border: none !important;
+  background: @primary-color !important;
+}
+.button {
+  background: @primary-color !important;
+  border-radius: @radius !important;
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+  transition: @animation-timings !important;
+  -o-transition: @animation-timings !important;
+  -moz-transition: @animation-timings !important;
+  -webkit-transition: @animation-timings !important;
+  &:hover {
+    box-shadow: @small-mouseover;
+    -o-box-shadow: @small-mouseover;
+    -moz-box-shadow: @small-mouseover;
+    -webkit-box-shadow: @small-mouseover;
+  }
+  &:active {
+    box-shadow: @small-active;
+    -o-box-shadow: @small-active;
+    -moz-box-shadow: @small-active;
+    -webkit-box-shadow: @small-active;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~NEUMORPHIC~~MOBILE~MENU~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.Mobile-overlay-nav-item {
+  background: @primary-color !important;
+  border-radius: @radius !important;
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+}
+.Mobile-overlay-nav-item:not(:first-child) {
+  margin-top: calc(@medium*2) !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~NEUMORPHIC~VIDEOS~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.sqs-video-wrapper {
+  box-shadow: @medium @medium @largest-blur @primary-shadow-dark, @medium-negative @medium-negative @largest-blur @primary-shadow-light;
+  border-radius: calc(@radius * 2)!important;
+  overflow: hidden;
+}
+@media only screen and (max-width: 640px) {
+  .sqs-video-wrapper {
+    box-shadow: @smallest @smallest @medium-blur @primary-shadow-dark, @smallest-negative @smallest-negative @medium-blur @primary-shadow-light;
+    border-radius: 0px;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~NEUMORPHIC~FOOTER~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.Footer {
+  position: relative;
+  box-shadow: 0 0 @largest 0px @primary-shadow-light !important;
+  -o-box-shadow: 0 0 @largest 0px @primary-shadow-light !important;
+  -moz-box-shadow: 0 0 @largest 0px @primary-shadow-light !important;
+  -webkit-box-shadow: 0 0 @largest 0px @primary-shadow-light !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~NEUMORPHIC~~~~~~~~~~*/
+/*~~~~~BLOG~AND~PRODUCTS~~~~~*/
+/*~~~~~~~LANDING~~PAGE~~~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.BlogList, .ProductList-grid {
+  padding-top: calc(@medium * 3.5);
+}
+.BlogList-item, .ProductList-item {
+  width: calc(~"(100% * 1/3) - (24px * 2) - (41px / 3 * 2)") !important;
+  padding: 24px;
+  margin-right: 41px;
+  border-radius: @radius;
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+  transition: @animation-timings;
+  -o-transition: @animation-timings !important;
+  -moz-transition: @animation-timings !important;
+  -webkit-transition: @animation-timings !important;
+  &:hover {
+    box-shadow: @small-mouseover;
+    -o-box-shadow: @small-mouseover;
+    -moz-box-shadow: @small-mouseover;
+    -webkit-box-shadow: @small-mouseover;
+  }
+}
+.BlogList-item-image, .ProductList-outerImageWrapper {
+  border-radius: @radius;
+  overflow: hidden;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~NEUMORPHIC~COMMENTS~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.squarespace-comments .new-comment-area {
+  background-color: @primary-color;
+}
+.squarespace-comments .new-comment-area .input, .squarespace-comments .comment-btn-wrapper {
+  border: none;
+}
+.squarespace-comments .new-comment-area .input form.comment-form textarea {
+  border-radius: @radius !important;
+  background-color: @primary-color;
+  box-shadow: @small-inset;
+  -o-box-shadow: @small-inset;
+  -moz-box-shadow: @small-inset;
+  -webkit-box-shadow: @small-inset;
+}
+.squarespace-comments .comment-btn {
+  border-radius: @radius !important;
+  background: @primary-color;
+  color: contrast(@primary-color, black, white);
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+  transition: @animation-timings;
+  -o-transition: @animation-timings;
+  -moz-transition: @animation-timings;
+  -webkit-transition: @animation-timings;
+  &:hover{
+    background: @primary-color;
+    box-shadow: @small-hover;
+    -o-box-shadow: @small-hover;
+    -moz-box-shadow: @small-hover;
+    -webkit-box-shadow: @small-hover;
+  }
+}
