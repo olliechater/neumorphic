@@ -262,6 +262,20 @@ box-shadow: @large-shadow;
     -webkit-box-shadow: @small-mouseover;
   }
 }
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+.BlogList-item, .ProductList-item {
+  width: calc(~"(100% * 1/2) - (24px * 2) - (41px / 2 * 1)") !important;
+  padding: 24px;
+  margin-right: 41px;
+  }
+}
+@media only screen and (max-width: 640px) {
+.BlogList-item, .ProductList-item {
+  width: calc(~"100% - (24px * 2)") !important;
+  padding: 24px;
+  margin-right: 41px!important;
+  }
+}
 .BlogList-item-image, .ProductList-outerImageWrapper {
   border-radius: @radius;
   overflow: hidden;
