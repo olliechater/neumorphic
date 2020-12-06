@@ -1,0 +1,228 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~NEUMORPHIC~~CONFIGURATION~*/
+/*~~~~~EDIT~TO~PREFERENCE~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@primary-color: hsl(0, 0%, 97%); /*The main color of your site pages*/
+@shadow-intensity: 16%; /*Embossed Shadow*/
+@inset-intensity: 4%; /*Debossed Shadow*/
+@distance: 8px; /*Shadow distance (relative to medium button size)*/
+@blur-multiplier: 2; /*Shadow blur*/
+@hover-multiplier: 1.75; /*Shadow growth on mouseover*/
+@radius: 10px; /*Corner radius when button shape is 'Rounded'*/
+@animation-timings: all 0.3s ease-in-out; /*Transition time between element states (eg hover, active, etc)*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~NEUMORPHIC~MATH~~~~~~*/
+/*~~~~~~~~DO~NOT~EDIT~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@primary-shadow-light: lighten(@primary-color, @shadow-intensity);
+@primary-shadow-dark: darken(@primary-color, @shadow-intensity);
+@primary-inset-light: lighten(@primary-color, @inset-intensity);
+@primary-inset-dark: darken(@primary-color, @inset-intensity);
+@smallest: calc(@distance / 3 * 1);
+@smallest-negative: calc(@distance / 3 * 1 * -1);
+@smallest-blur: calc(@distance / 3 * 1 * @blur-multiplier);
+@smallest-hover: calc(@distance * @hover-multiplier / 3 * 1);
+@smallest-hover-negative: calc(@distance * @hover-multiplier / 3 * 1 * -1);
+@smallest-hover-blur: calc(@distance * @hover-multiplier / 3 * 1 * @blur-multiplier);
+@small: calc(@distance / 3 * 2);
+@small-negative: calc(@distance / 3 * 2 * -1);
+@small-blur: calc(@distance / 3 * 2 * @blur-multiplier);
+@small-hover: calc(@distance * @hover-multiplier / 3 * 2);
+@small-hover-negative: calc(@distance * @hover-multiplier / 3 * 2 * -1);
+@small-hover-blur: calc(@distance * @hover-multiplier / 3 * 2 * @blur-multiplier);
+@medium: @distance;
+@medium-negative: calc(@distance * -1);
+@medium-blur: calc(@distance * @blur-multiplier);
+@medium-hover: calc(@distance * @hover-multiplier);
+@medium-hover-negative: calc(@distance * @hover-multiplier * -1);
+@medium-hover-blur: calc(@distance * @hover-multiplier * @blur-multiplier);
+@large: calc(@distance / 3 * 4);
+@large-negative: calc(@distance / 3 * 4 * -1);
+@large-blur: calc(@distance / 3 * 4 * @blur-multiplier);
+@large-hover: calc(@distance * @hover-multiplier / 3 * 4);
+@large-hover-negative: calc(@distance * @hover-multiplier / 3 * 4 * -1);
+@large-hover-blur: calc(@distance * @hover-multiplier / 3 * 4 * @blur-multiplier);
+@largest: calc(@distance / 3 * 5);
+@largest-negative: calc(@distance / 3 * 5 * -1);
+@largest-blur: calc(@distance / 3 * 5 * @blur-multiplier);
+@largest-hover: calc(@distance * @hover-multiplier / 3 * 5);
+@largest-hover-negative: calc(@distance * @hover-multiplier / 3 * 5 * -1);
+@largest-hover-blur: calc(@distance * @hover-multiplier / 3 * 5 * @blur-multiplier);
+
+@smallest-shadow: @smallest @smallest @smallest-blur @primary-shadow-dark, @smallest-negative @smallest-negative @smallest-blur @primary-shadow-light !important;
+@small-shadow: @small @small @small-blur @primary-shadow-dark, @small-negative @small-negative @small-blur @primary-shadow-light !important;
+@medium-shadow: @medium @medium @medium-blur @primary-shadow-dark, @medium-negative @medium-negative @medium-blur @primary-shadow-light !important;
+@large-shadow: @large @large @large-blur @primary-shadow-dark, @large-negative @large-negative @large-blur @primary-shadow-light !important;
+@largest-shadow: @largest @largest @largest-blur @primary-shadow-dark, @largest-negative @largest-negative @largest-blur @primary-shadow-light !important;
+@smallest-mouseover: @smallest-hover @smallest-hover @smallest-hover-blur @primary-shadow-dark, @smallest-hover-negative @smallest-hover-negative @smallest-hover-blur @primary-shadow-light !important;
+@small-mouseover: @small-hover @small-hover @small-hover-blur @primary-shadow-dark, @small-hover-negative @small-hover-negative @small-hover-blur @primary-shadow-light !important;
+@medium-mouseover: @medium-hover @medium-hover @medium-hover-blur @primary-shadow-dark, @medium-hover-negative @medium-hover-negative @medium-hover-blur @primary-shadow-light !important;
+@large-mouseover: @large-hover @large-hover @large-hover-blur @primary-shadow-dark, @large-hover-negative @large-hover-negative @large-hover-blur @primary-shadow-light !important;
+@largest-mouseover: @largest-hover @largest-hover @largest-hover-blur @primary-shadow-dark, @largest-hover-negative @largest-hover-negative @largest-hover-blur @primary-shadow-light !important;
+@smallest-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @smallest @smallest @smallest-blur @primary-inset-dark, inset @smallest-negative @smallest-negative @smallest-blur @primary-inset-light !important;
+@small-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @small @small @small-blur @primary-inset-dark, inset @small-negative @small-negative @small-blur @primary-inset-light !important;
+@medium-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @medium @medium @medium-blur @primary-inset-dark, inset @medium-negative @medium-negative @medium-blur @primary-inset-light !important;
+@large-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @large @large @large-blur @primary-inset-dark, inset @large-negative @large-negative @large-blur @primary-inset-light !important;
+@largest-active: 0px 0px 0px @primary-shadow-dark, 0px 0px 0px @primary-shadow-light, inset @largest @largest @largest-blur @primary-inset-dark, inset @largest-negative @largest-negative @largest-blur @primary-inset-light !important;
+@smallest-inset: inset @smallest @smallest @smallest-blur @primary-inset-dark, inset @smallest-negative @smallest-negative @smallest-blur @primary-inset-light !important;
+@small-inset: inset @small @small @small-blur @primary-inset-dark, inset @small-negative @small-negative @small-blur @primary-inset-light !important;
+@medium-inset: inset @medium @medium @medium-blur @primary-inset-dark, inset @medium-negative @medium-negative @medium-blur @primary-inset-light !important;
+@large-inset: inset @large @large @large-blur @primary-inset-dark, inset @large-negative @large-negative @large-blur @primary-inset-light !important;
+@largest-inset: inset @largest @largest @largest-blur @primary-inset-dark, inset @largest-negative @largest-negative @largest-blur @primary-inset-light !important;
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~END~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+//Custom Filter Styles 
+.custom-filter-container.cf-placed-filters .customFiltersWrapper {
+  &.BlogList-item {
+    clear: none;
+    float: left;
+    margin-top: 0;
+    .sqs-block {
+      max-width: none;
+      .archive-group-list {
+        position: relative;
+        top: auto;
+}}}}
+.custom-filter-container.cf-placed-filters .customFiltersWrapper {
+  &.ProductList-item {
+    clear: none;
+    float: left;
+    margin-top: 0;
+    margin-right: 41px !important;
+    .sqs-block {
+      max-width: none;
+      .archive-group-list {
+        position: relative;
+        top: auto;
+}}}}
+body .custom-filter-container .custom-filter-grid.BlogList {
+  overflow: visible;
+  //display: flex;
+  align-items: stretch;
+  .BlogList-item {
+    margin-bottom: 0;
+  }
+}
+body .custom-filter-container .custom-filter-grid.ProductList-grid {
+  overflow: visible;
+  //display: flex;
+  align-items: stretch;
+  .ProductList-item {
+    //margin-bottom: 0;
+  }
+}
+.BlogList, .ProductList-grid {
+  //margin-bottom: 50px !important;
+}
+.custom-filter-container ul {
+  overflow: visible!important;
+}
+.custom-filter-container li a, .clearAllBtn {
+  border: none !important;
+  transition: @animation-timings;
+  -webkit-transition: @animation-timings;
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+  border-radius: @radius !important;
+  background: @primary-color !important;
+  color: contrast(@primary-color, black, white);
+}
+.custom-filter-container li a.active {
+  box-shadow: @medium-shadow !important;
+  -o-box-shadow: @medium-shadow !important;
+  -moz-box-shadow: @medium-shadow !important;
+  -webkit-box-shadow: @medium-shadow !important;
+  background: linear-gradient(145deg, #d9d9d9, #ffffff) !important;
+  color: contrast(@primary-color, black, white);
+  &:hover{
+    box-shadow: @medium-shadow !important;
+    -o-box-shadow: @medium-shadow !important;
+    -moz-box-shadow: @medium-shadow !important;
+    -webkit-box-shadow: @medium-shadow !important;
+  }
+}
+.clearAllBtn {
+  background: #000 !important;
+  color: #fff !important;
+  & :hover {
+  box-shadow: none !important;
+  -o-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  }
+}
+.custom-items-search {
+  width: inherit !important;
+}
+.search-icon {
+  display: none !important;
+}
+.search-input {
+  font-size: 1em !important;
+  padding-left: 0 !important;
+  font-family: acumin-pro-wide !important;
+  box-shadow: @smallest-inset !important;
+  -o-box-shadow: @smallest-inset !important;
+  -moz-box-shadow: @smallest-inset !important;
+  -webkit-box-shadow: @smallest-inset !important;
+  -webkit-appearance: none;
+  border-radius: @radius !important;
+  border: none !important;
+  padding-left: 5px !important;
+  background: @primary-color !important;
+}
+
+.archive-dropdown-toggle-label {
+  display: inherit !important;
+}
+.filterValues, .icn-down-open {
+  display: none !important;
+}
+.custom-filter-container .dirty .reset-button {
+  display: none;
+}
+
+
+.filter-type-range-slider {
+  min-width: 100%;
+}
+.filter-block-label {
+ padding-left: 16px !important;
+}
+.range-slider {
+  padding: 0 !important;
+}
+.noUi-handle {
+  margin: -12px 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: #f7f7f7 !important;
+}
+.noUi-handle-lower {
+  right: -100% !important;
+}
+.noUi-handle-upper {
+  right: 0% !important;
+}
+.noUi-base {
+  background-color: #f7f7f7 !important;
+}
+.noUi-connect {
+  background-color: rgb(200, 200, 200) !important;
+}
+.noUi-base {
+  background-color: rgb(248,248,248) !important;
+}
+.filter-block-label {
+  padding-bottom: 10px !important;
+}
