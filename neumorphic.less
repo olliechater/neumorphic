@@ -445,3 +445,66 @@
   border: none !important;
   background: @primary-color !important;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~NEUMORPHIC~~~~~~~~~*/
+/*~~~~~~~~ACCORDION~~~~~~~~~~*/
+/*~~~~~~~~V3~201229~~~~~~~~~~*/
+/* ~~~by~~oliverchater.com~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.accordion {
+  width: 100%;
+  padding: @largest;
+  margin: @largest 0;
+  text-align: left;
+  font-weight: 500;
+  transition: @animation-timings;
+  background: @primary-color !important;
+  outline: none !important;
+  border: none;
+  border-radius: @radius !important;
+  box-shadow: @small-shadow;
+  -o-box-shadow: @small-shadow;
+  -moz-box-shadow: @small-shadow;
+  -webkit-box-shadow: @small-shadow;
+  transition: @animation-timings !important;
+  -o-transition: @animation-timings !important;
+  -moz-transition: @animation-timings !important;
+  -webkit-transition: @animation-timings !important;
+  &:hover {
+    box-shadow: @small-mouseover;
+    -o-box-shadow: @small-mouseover;
+    -moz-box-shadow: @small-mouseover;
+    -webkit-box-shadow: @small-mouseover;
+  }
+  &:after {
+    content: '\002B';
+    font-weight: 500;
+    font-size: 20px;
+    color: inherit;
+    float: right;
+    margin-left: 10px;
+  }
+}
+.accordionActive {
+  box-shadow: @small-active;
+  -o-box-shadow: @small-active;
+  -moz-box-shadow: @small-active;
+  -webkit-box-shadow: @small-active;
+  &:hover {
+    box-shadow: @small-active;
+    -o-box-shadow: @small-active;
+    -moz-box-shadow: @small-active;
+    -webkit-box-shadow: @small-active;
+  }
+  &:after {
+    content: "\2212";
+  }
+}
+.accordionContent {
+  padding: 0; /* Do not edit */
+  max-height: 0; /* Do not edit */
+  overflow: hidden;
+  background: @primary-color !important;
+  transition: @animation-timings;
+}
