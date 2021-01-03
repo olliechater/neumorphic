@@ -131,7 +131,6 @@ pre[class*="language-"] {
 	color: #905;
 }
 
-.token.important,
 .token.bold {
 	font-weight: bold;
 }
