@@ -10,7 +10,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+	color: #5e5e5e;
 	background: none;
 	text-shadow: none;
 	font-family: monospace, monospace;
@@ -90,13 +90,12 @@ pre[class*="language-"] {
 .token.number,
 .token.constant,
 .token.symbol,
+.token.string,
 .token.deleted {
 	color: #690;
 }
 
 .token.selector,
-.token.attr-name,
-.token.string,
 .token.char,
 .token.builtin,
 .token.inserted {
@@ -113,9 +112,10 @@ pre[class*="language-"] {
 
 .token.atrule,
 .token.attr-value {
-	color: #690;
+	color: #e90;
 }
 
+.token.attr-name,
 .token.keyword {
 	color: #07a;
 }
