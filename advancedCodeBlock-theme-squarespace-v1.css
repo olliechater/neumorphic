@@ -120,7 +120,7 @@ pre[class*="language-"] {
 }
 
 .token.important,
-.token.language-javascript .token.variable {
+.token.language-javascript .token.keyword {
 	color: #905;
 }
 
