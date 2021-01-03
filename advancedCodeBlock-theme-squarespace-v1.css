@@ -76,10 +76,6 @@ pre[class*="language-"] {
 	color: #aaa;
 }
 
-.token.punctuation {
-	color: #5e5e5e;
-}
-
 .token.namespace {
 	opacity: .7;
 }
@@ -95,18 +91,18 @@ pre[class*="language-"] {
 	color: #690;
 }
 
+.token.punctuation,
 .token.selector,
 .token.char,
 .token.builtin,
-.token.inserted {
-	color: #5e5e5e;
-}
-
+.token.inserted,
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string {
+.style .token.string,
+.token.function,
+.token.class-name {
 	color: #5e5e5e;
 }
 
@@ -121,11 +117,6 @@ pre[class*="language-"] {
 .token.variable,
 .token.language-javascript .token.function {
 	color: #07a;
-}
-
-.token.function,
-.token.class-name {
-	color: #5e5e5e;
 }
 
 .token.important,
@@ -163,7 +154,7 @@ pre[class*="language-"].line-numbers > code {
 	left: -3.8em;
 	width: 3em; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
-	border-right: 1px solid #999;
+	border-right: 1px solid #aaa;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -179,7 +170,7 @@ pre[class*="language-"].line-numbers > code {
 
 		.line-numbers-rows > span:before {
 			content: counter(linenumber);
-			color: #999;
+			color: #aaa;
 			display: block;
 			padding-right: 0.8em;
 			text-align: right;
