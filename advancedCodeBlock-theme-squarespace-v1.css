@@ -116,18 +116,15 @@ pre[class*="language-"] {
 }
 
 .token.attr-name,
-.token.keyword {
+.token.keyword,
+.token.regex,
+.token.variable {
 	color: #07a;
 }
 
 .token.function,
 .token.class-name {
 	color: #5e5e5e;
-}
-
-.token.regex,
-.token.variable {
-	color: #690;
 }
 
 .token.important {
